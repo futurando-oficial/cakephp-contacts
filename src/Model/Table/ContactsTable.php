@@ -23,6 +23,9 @@ use Cake\Validation\Validator;
 class ContactsTable extends Table
 {
 
+    const STATUS_PENDENT = 0;
+    const STATUS_READED = 1;
+    const STATUS_ANSWERED = 2; 
     /**
      * Initialize method
      *

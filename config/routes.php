@@ -7,6 +7,6 @@ Router::plugin(
     'contacts',
     ['path' => '/contacts'],
     function (RouteBuilder $routes) {
-        $routes->fallbacks(DashedRoute::class);
+        $routes->connect('/', ['controller' => 'Contacts', 'action' => 'add']);
     }
 );
