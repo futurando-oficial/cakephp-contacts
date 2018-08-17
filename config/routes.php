@@ -11,10 +11,9 @@ Router::plugin(
     }
 );
 
-Router::plugin(
-    'contacts',
-    ['path' => '/contacts','_namePrefix'=>'Painel'],
-    function (RouteBuilder $routes) {
-        $routes->fallbacks(DashedRoute::class);
-    }
-);
+Router::scope('/', function ($routes) {
+    // Connect other routes.
+    $routes->scope('/painel', function ($routes) {
+        $routes->loadPlugin('Contacts');
+    });
+});
