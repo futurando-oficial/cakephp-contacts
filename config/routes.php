@@ -10,3 +10,11 @@ Router::plugin(
         $routes->connect('/', ['controller' => 'Contacts', 'action' => 'add']);
     }
 );
+
+Router::plugin(
+    'contacts',
+    ['path' => '/contacts','_namePrefix'=>'Painel'],
+    function (RouteBuilder $routes) {
+        $routes->fallbacks(DashedRoute::class);
+    }
+);
